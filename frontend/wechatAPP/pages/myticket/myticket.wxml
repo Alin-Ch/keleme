@@ -1,0 +1,31 @@
+<van-tabs active="{{ active }}" bind:change="tagChange" border="true" color="#29a0de">
+  <van-tab title="可用水票">
+    <van-card wx:for="{{5}}" wx:key="index" num="2" tag="可用" price="10.00" desc="订单日期"  title="商品名称" thumb="/images/huge.jpg" origin-price="20.00" >
+      <view slot="tags">
+        <text style="color: #666">订单号:</text>
+      </view>
+      <view slot="footer">
+        <van-button round size="small" style="margin-right: 20rpx;" bindtap="refund" data-id="{{index}}">退款</van-button>
+        <van-button round size="small" type="primary" bindtap="useTicket" data-id="{{index}}">去使用</van-button>
+      </view>
+    </van-card>
+
+  </van-tab>
+  <van-tab title="待付款">
+    <van-card num="2" tag="待付款" price="10.00" desc="描述信息" title="商品标题" thumb="/images/huge.jpg">
+      <view slot="footer">
+        <van-button round type="default" size="small" style="margin-right: 20rpx;" bindtap="cancelTicket">取消</van-button>
+        <van-button round type="primary" size="small" bindtap="goPay" data-id="1">去支付</van-button>
+      </view>
+    </van-card>
+
+  </van-tab>
+  <van-tab title="已使用">
+    <van-card num="{{2}}" tag="已使用" price="{{10.00}}" desc="描述信息" title="商品标题" thumb="/images/huge.jpg">
+    </van-card>
+  </van-tab>
+  <van-tab title="已失效">
+    <van-card num="{{2}}" tag="已失效" price="{{10.00}}" desc="描述信息" title="商品标题" thumb="/images/huge.jpg">
+    </van-card>
+  </van-tab>
+</van-tabs>

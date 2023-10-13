@@ -1,0 +1,88 @@
+<view class="box">
+  <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" class="cover">
+    <image src="{{cover}}" class="pic" mode="aspectFill" bindtap="getUserProfile" />
+  </button>
+
+  <view class="info">
+    <van-cell-group>
+      <van-field model:value="{{ username }}" type="nickname" clearable maxlength="15" left-icon="user-o" label="用户名" placeholder="请输入用户名" bind:change="usernameInput" />
+      <van-field value="{{ phone }}" clearable maxlength="11" left-icon="phone-o" label="手机号" placeholder="请输入手机号" bind:change="phoneInput" />
+      <van-field value="{{ password }}" clearable password maxlength="16" left-icon="shield-o" label="密码" placeholder="请输入密码" bind:change="passwordInput" />
+      <van-field value="{{ againPassword }}" clearable password maxlength="16" left-icon="shield-o" label="验证密码" placeholder="请再次输入密码" bind:change="againPasswordInput" />
+      <!-- <van-cell-group>
+        <van-field value="{{ sms }}" center clearable left-icon="font-o"  label="验证码" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+          <van-button slot="button" round size="small" type="primary">
+            发送验证码
+          </van-button>
+        </van-field>
+      </van-cell-group> -->
+
+    </van-cell-group>
+  </view>
+  <button class="btn" bindtap="register" disabled="{{disabled}}">注 册</button>
+  <!-- 同意协议 -->
+  <view style="display: flex;align-items: center; margin-top: 20rpx;">
+    <van-checkbox value="{{ checked }}" bind:change="checkChange" shape="square">
+      我已阅读并同意
+    </van-checkbox>
+    <text style="font-size: 25rpx;color: #1989fa;border-bottom: 1rpx solid #1989fa;" bindtap="userXieyi">《渴了么用户协议》
+    </text>、
+    <text style="font-size: 25rpx;color: #1989fa;border-bottom: 1rpx solid #1989fa;" bindtap="privacyXieyi">《隐私政策》
+    </text>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+<!-- <button open-type="getPhoneNumber" bind:getphonenumber="onGetPhoneNumber">获取手机号</button> -->
+
+<!-- <view class="container"> -->
+<!-- <button class="login-icon" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <image class="login-img" src="{{cover}}" mode="aspectFill"></image>
+</button> -->
+<!-- <view class="login-from">
+    <view class="inputView">
+      <button open-type="nickname">
+        <image class="keyImage" src="/images/phone.png"></image>
+        <label class="loginLab">用户名</label>
+        <input class="inputText" value="{{username}}" placeholder="请输入用户名" bindinput="usernameInput" />
+      </button>
+
+    </view>
+    
+    <view class="inputView" style="margin-top: 15rpx;">
+      <image class="keyImage" src="/images/phone.png"></image>
+      <label class="loginLab">账号</label>
+      <input class="inputText" value="{{phone}}" placeholder="请输入手机号" bindinput="phoneInput" />
+    </view>
+    <view class="line"></view>
+
+    
+    <view class="inputView">
+      <image class="keyImage" src="/images/password.png"></image>
+      <label class="loginLab">密码</label>
+      <input class="inputText" value="{{password}}" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+    </view>
+    
+    <view class="inputView" style="margin-top: 15rpx;">
+      <image class="keyImage" src="/images/captcha.png"></image>
+      <label class="loginLab">验证码</label>
+      <input class="inputText" value="{{code}}" placeholder="请输入验证码" bindinput="codeInput" />
+    </view>
+    
+    <view class="captcha" bindtap="changeCaptcha">
+      <image src="{{captcha}}" mode="aspectFit" />
+    </view>
+
+    
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="register">注册</button>
+    </view>
+  </view> -->
+<!-- </view> -->

@@ -1,0 +1,39 @@
+<!-- 通知 -->
+<van-notice-bar color="#1989fa" scrollable background="#ecf9ff" left-icon="volume-o" text="未登录的话只是让你玩玩而已，需要登录才能获取奖励噢~" />
+<view class="jifen">
+  积分: {{jifen}}
+</view>
+<view style="font-size:23rpx;color:#7f7f7f;font-weight:normal;width: 100%;text-align:center;">每天只允许抽一次，之后的抽奖不计入哦</view>
+<view class="container">
+  <view class="main">
+    <view class="canvas-container">
+      <view animation="{{animationData}}" class="canvas-content">
+        <view class="canvas-line">
+          <view class="canvas-litem" wx:for="{{awardsList}}" wx:key="unique" style="-webkit-transform: rotate({{item.lineTurn}});transform: rotate({{item.lineTurn}})"></view>
+        </view>
+
+        <view class="canvas-list">
+          <view class="canvas-item" wx:for="{{awardsList}}" wx:key="unique">
+            <view class="canvas-item-text" style="-webkit-transform: rotate({{item.turn}});transform: rotate({{item.turn}})">{{item.award}}</view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="playReward" class="canvas-btn {{btnDisabled}}">抽奖</view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 弹出层 -->
+<view class="drawer_screen" catchtouchmove="true" wx:if="{{showModalStatus}}">
+</view>
+<view class="drawer_box" catchtouchmove="true" wx:if="{{showModalStatus}}">
+  <view class="drawer_content_box">
+    <view class="drawer_content">
+      <image src='/images/huge.jpg'></image>
+      <view>参与本店抽奖活动</view>
+      <view>请先授权登录</view>
+      <button class="drawer_btn" open-type='getUserInfo' bindgetuserinfo='handleGetUserInfo' type='primary'>点击授权</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,142 @@
+
+.coverbox{
+  width: 100%;
+  height: 700rpx;
+}
+.cover {
+  width: 100%;
+  height: 700rpx;
+}
+.title{
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -30rpx;
+}
+.title .price{
+  font-size: 38rpx;
+  font-weight: bold;
+  color: rgb(247, 49, 0);
+}
+.title .sold{
+  margin-right: 50rpx;
+  color: #7f7f7f;
+  font-size: 28rpx;
+}
+.goodname{
+  width: 100%;
+  padding: 20rpx;
+  margin-top: -30rpx;
+  display: flex;
+  align-items: center;
+}
+.goodname .name{
+  font-size: 33rpx;
+  width: 85%;
+  color: #666;
+}
+.goodname .share{
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+  border: none;
+  background-color: #fff;
+}
+/* 评价 */
+.pingjia{
+  width: 100%;
+  margin-top: -65rpx;
+}
+
+.comment{
+  padding: 0 20rpx 10rpx 20rpx;
+  width: 100%;
+}
+.comment .top{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.comment .top .avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.comment .top .name{
+  margin-left: 30rpx;
+  color: #666;
+}
+.comment .bottom{
+  width: 95%;
+  color: #7f7f7f;
+  text-indent: 2em;
+  padding-bottom: 150rpx;
+}
+
+
+/* 规格选择 */
+.sizetop{
+  width: 100%;
+  height: 260rpx;
+  padding: 10rpx;
+  margin-top: 80rpx;
+  display: flex;
+}
+.sizetop .cover{
+  width: 255rpx;
+  height: 260rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+}
+.sizetop .name{
+  margin-left: 30rpx;
+}
+.sizetop .name .name1{
+  font-size: 35rpx;
+  color: #333;
+}
+.sizetop .name .price{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: red;
+}
+
+.midddle .size{
+  align-items: center;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+.midddle .number{
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.sizebottom{
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.btn1{
+  border-radius: 40rpx 0 0 40rpx;
+  background-color: #ffa938;
+  color: #fff;
+  flex: 1;
+}
+.btn2{
+  border-radius: 0 40rpx 40rpx 0;
+  background-color: #ff0505;
+  color: #fff;
+  flex: 1;
+}

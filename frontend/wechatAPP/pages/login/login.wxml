@@ -1,0 +1,47 @@
+<view class="container">
+
+  <view style="width: 100%;height: 100%; margin-bottom: -150rpx;">
+    <image src="https://ts1.cn.mm.bing.net/th/id/R-C.1bb62772965611e561978c8e5ea2151d?rik=aAvZiDV4%2fEBndg&riu=http%3a%2f%2fwww.waterexpocn.com%2fcn%2fIndustryNews%2f2021%2fimages%2f04.18%2f2.jpeg&ehk=Skyp1wHGpJIFv1KMgOnqX4acUK5w%2ffGwfUBC2EMAY4I%3d&risl=&pid=ImgRaw&r=0" style="width: 100%;" mode="aspectFill" />
+  </view>
+  <!-- <button class="login-icon" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="login-img" src="{{cover}}" mode="aspectFill"></image>
+  </button> -->
+  <view class="login-from">
+    <!--手机号-->
+    <view class="inputView">
+      <image class="keyImage" src="/images/phone.png"></image>
+      <label class="loginLab">账号</label>
+      <input class="inputText" value="{{phone}}" maxlength="11" placeholder="请输入手机号" bindinput="usernameInput" />
+    </view>
+    <view class="line"></view>
+
+    <!--密码-->
+    <view class="inputView">
+      <image class="keyImage" src="/images/password.png"></image>
+      <label class="loginLab">密码</label>
+      <input class="inputText" value="{{password}}" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+    </view>
+    <!--验证码-->
+    <view class="inputView" style="margin-top: 15rpx;">
+      <image class="keyImage" src="/images/captcha.png"></image>
+      <label class="loginLab">验证码</label>
+      <input class="inputText" value="{{code}}" placeholder="请输入验证码" bindinput="codeInput" />
+    </view>
+    <!-- 验证码 -->
+    <view class="captcha" bindtap="changeCaptcha">
+      <image src="{{captcha}}" mode="aspectFit" />
+    </view>
+
+
+    <!-- 注册、忘记密码 -->
+    <view class="bottom">
+      <text bindtap="goRegister">没有账号?去注册</text>
+      <text bindtap="forget">忘记密码</text>
+    </view>
+
+    <!--按钮-->
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
+    </view>
+  </view>
+</view>

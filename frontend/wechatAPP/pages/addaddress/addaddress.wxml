@@ -1,0 +1,24 @@
+<!-- <view class="top">新增地址</view> -->
+<view class="map">
+  <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markerss}}" id="myMap"></map>
+
+</view>
+<view class="address" bindtap="getLocation">
+  <van-icon name="aim" size="50rpx" />
+</view>
+
+<!-- 输入用户信息 -->
+<view>
+  <van-cell-group>
+    <van-field value="{{ username }}" required clearable label="收货人" left-icon="user-o" placeholder="请输入收货人名称" bind:change="nameChange" />
+
+    <van-field value="{{ phone }}" maxlength="11" required clearable label="手机号" left-icon="phone-circle-o" placeholder="请输入联系方式" bind:change="phoneChange" />
+
+    <van-field value="{{ address }}" required readonly label="地址" left-icon="location-o" right-icon="arrow" placeholder="请选择地址" bindtap="chooseAddress" />
+    <van-field value="{{ detailAddress }}" maxlength="35" required clearable label="详细地址" left-icon="logistics" placeholder="输入详细地址" bind:change="detailChange" />
+  </van-cell-group>
+</view>
+
+<view>
+  <van-button size="large" round type="info" bind:tap="submitForm">添加地址</van-button>
+</view>

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.10.25",
+    "wx-pin-prompt": "^1.3.6"
+  },
+  "name": "font",
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

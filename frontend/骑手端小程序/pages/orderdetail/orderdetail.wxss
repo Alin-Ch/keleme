@@ -1,0 +1,41 @@
+page{
+  background-color: rgb(243, 243, 243);
+}
+.topNav{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: #666;
+}
+.address{
+  width: 90%;
+  margin: 10rpx auto;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  color: #666;
+  background-color: #fff;
+}
+.title{
+  width: 90%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.title .date{
+  font-size: 28rpx;
+  color: #666;
+}
+.title .statu{
+  font-weight: bold;
+  color: red;
+}
+.btn{
+  margin: 20rpx;
+  width: 100%;
+  text-align: center;
+}

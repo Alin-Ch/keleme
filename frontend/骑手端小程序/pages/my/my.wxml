@@ -1,0 +1,39 @@
+<!-- 顶部 -->
+<view class="topNav">
+  <view class="top" wx:if="{{isLogin}}">
+    <view class="left">
+      <image src="{{userinfo.empavatar}}" mode="aspectFill" />
+    </view>
+    <view class="right" bindtap="edit">
+      <view class="name">{{userinfo.empname}}</view>
+      <view class="station">{{station.sname}}</view>
+    </view>
+    <van-button type="info" size="small" round bind:click="logout">退出登录</van-button>
+  </view>
+  <view class="login" wx:else>
+    <van-button icon="friends-o" round type="info" size="normal" bind:click="login">
+      骑 手 登 录
+    </van-button>
+  </view>
+</view>
+
+<!-- 中间部分 -->
+<view class="middle">
+  <van-grid clickable>
+    <van-grid-item icon-color="skyblue" icon="logistics" text="配送" bind:click="clickIcon" />
+    <van-grid-item icon-color="skyblue" icon="todo-list-o" text="记录" bind:click="clickIcon" />
+    <van-grid-item icon-color="skyblue" icon="hotel-o" text="酒店" bind:click="clickIcon" />
+    <van-grid-item icon-color="skyblue" icon="cashier-o" text="收入" bind:click="clickIcon" />
+  </van-grid>
+</view>
+<view class="bottom">
+  <van-cell is-link icon="chart-trending-o" size="large" title="销售趋势" />
+  <van-cell is-link icon="calendar-o" size="large" title="周周报" />
+  <van-cell is-link icon="scan" size="large" title="扫描水票" />
+  <van-cell is-link icon="miniprogram-o" size="large" title="拓展" />
+  <van-cell is-link icon="list-switching" size="large" title="设置" />
+</view>
+
+<view class="copyright">
+  版权所有 © 2023 渴了么
+</view>

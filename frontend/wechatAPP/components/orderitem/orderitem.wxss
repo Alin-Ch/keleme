@@ -1,0 +1,59 @@
+
+.item{
+  width: 95%;
+  height: 490rpx;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+.title {
+  width: 100%;
+  height: 50rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.topright{
+  margin-right: 20rpx;
+  font-size: 33rpx;
+  color: #f07034;
+}
+
+.middle{
+  display: flex;
+}
+.middle .cover{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.middle .info{
+  width: 400rpx;
+  background-color: #fff;
+}
+.middle .info .name{
+  font-size: 35rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.middle .info .desc{
+  color: #7f7f7f;
+  font-size: 28rpx;
+}
+.middle .money{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.btn{
+  margin-top: 45rpx;
+  position: absolute;
+  right: 20rpx;
+}

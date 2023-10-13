@@ -1,0 +1,107 @@
+
+/* 顶部样式 */
+.top{
+  width: 100%;
+  height: 260rpx;
+  background-color: #29a0de;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.top .avatar{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.top .info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.top .info .name{
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.top .info .phone{
+  font-size: 28rpx;
+  color: rgb(240, 240, 240);
+}
+.top .loginBtn{
+  width: 300rpx;
+}
+
+/* 积分 */
+.jifen{
+  width: 95%;
+  height: 120rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -60rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 60rpx;
+}
+.jifen .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.jifen .item text{
+  font-size: 35rpx;
+  font-weight: bold;
+  color: rgb(70, 68, 68);
+}
+.jifen .item view{
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgb(70, 68, 68);
+}
+
+/* 底部 */
+.bottom{
+  margin-top: 20rpx;
+}
+
+.contact{
+    width: 100%;
+    height: 90rpx;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 1085rpx;
+    z-index: 99;
+}
+/* button联系客服 */
+.contacButton {
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+  }
+  .contacButton::after {
+    border: #FFF solid;
+  }
+
+
+  /* 抽奖图标 */
+.lottery{
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+}
+/* 版权所有 */
+.copyright {
+  width: 100%;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 100rpx;
+  margin-top: 20rpx;
+}
+  

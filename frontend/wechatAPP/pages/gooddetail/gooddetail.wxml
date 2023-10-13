@@ -1,0 +1,73 @@
+<view>
+  <view class="coverbox">
+    <image class="cover" bind:tap="previewImage" src="http://localhost:8080/api/files/{{gooditem.cover}}" mode="aspectFit" />
+  </view>
+  <view class="title">
+    <text class="price">￥{{gooditem.newprice}}</text>
+    <text class="sold">{{gooditem.sold}} 已售</text>
+  </view>
+  <van-divider />
+  <view class="goodname">
+    <view class="name">
+      {{gooditem.goodname}}
+    </view>
+    <button class="share" open-type="share">
+      <van-icon name="share-o" size="40rpx" />
+    </button>
+  </view>
+  <!-- 选择规格，以及规格选择的弹出框 -->
+  <van-cell title="选择规格" is-link bind:click="showPopup" />
+  <van-popup show="{{ show }}" closeable round position="bottom" custom-style="height: 80%;" bind:close="onClose">
+    <view class="sizetop">
+      <image class="cover" bind:tap="previewImage" src="http://localhost:8080/api/files/{{gooditem.cover}}" mode="aspectFit" />
+      <view class="name">
+        <view class="name1">{{gooditem.goodname}}</view>
+        <view class="price">￥{{gooditem.newprice}}</view>
+      </view>
+    </view>
+    <view class="midddle">
+      <view class="size">
+        <view style="margin-bottom: 10rpx;">规格</view>
+        <van-button size="small" plain type="info">{{gooditem.size}}</van-button>
+      </view>
+      <view class="number">
+        <view>
+          已选择
+        </view>
+        <van-stepper value="{{ count }}" bind:change="countChange" />
+      </view>
+    </view>
+    <view class="sizebottom">
+      <button class="btn1" bindtap="addCart">加入购物车</button>
+      <button class="btn2" bindtap="buy">立即购买</button>
+    </view>
+  </van-popup>
+
+
+  <van-divider />
+  <view class="pingjia">
+    <van-cell title="商品评价({{45}})" icon="comment-o" is-link value="全部评价" />
+    <view class="comment">
+      <view class="top">
+        <image class="avatar" src="/images/huge.jpg" mode="aspectFill" />
+        <view class="name">
+          <view>name</view>
+          <van-rate readonly value="{{ 3 }}" size="25rpx" />
+        </view>
+      </view>
+      <view class="bottom">
+        超级的百搭实物巨好看的，虽然不勒脖子但是卡脖子不舒服！价位真给力！物流速度满，料子也属于比较硬挺的，特别是他这个简约款太爱了这个效果，料子软糯糯的穿着很舒服，喜欢的姐妹可以入手哦，我的身高体重，穿上又帅又酷
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部加入购物车等 -->
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" bind:click="onClickIcon" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="{{cartList.length}}" bind:click="gotoCart" />
+  <van-goods-action-button text="加入购物车" type="warning" bind:click="showPopup" />
+  <van-goods-action-button text="立即购买" bind:click="showPopup" />
+</van-goods-action>
+<!-- toast提示 -->
+<van-toast id="van-toast" />
+<!-- 商品规格展示 -->

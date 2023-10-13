@@ -1,0 +1,28 @@
+
+.box{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  margin-top: 10rpx;
+}
+.topNav{
+  padding: 10rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.orderno{
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.money{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30rpx;
+  font-size: 35rpx;
+}
+.btn{
+  margin-left: 80rpx;
+}

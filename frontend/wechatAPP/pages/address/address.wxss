@@ -1,0 +1,60 @@
+
+page{
+  background-color: rgb(243, 243, 243);
+}
+.item{
+  width: 90%;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 2px 8px 24px;
+  background-color: #fff;
+}
+.item .left{
+  width: 620rpx;
+}
+.left .name{
+  font-size: 35rpx;
+  font-weight: 600;
+  color: #666;
+}
+.left .address{
+  font-size: 28rpx;
+  color: #7f7f7f;
+}
+.right{
+  width: 120rpx;
+  display: flex;
+  margin-left: 10rpx;
+  justify-content: space-between;
+}
+
+
+
+
+/* 列表滚动 */
+.scrollview {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 100rpx; /* 按钮高度 */
+}
+
+.button-wrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* 底部按钮 */
+/* .button-wrapper{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+} */

@@ -1,0 +1,6 @@
+<view class="map">
+  <map longitude="{{jingdu}}" latitude="{{weidu}}" markers="{{markers}}" id="myMap" scale="15" enable-overlooking="true"></map>
+</view>
+<view class="address" bindtap="getLocation">
+  <van-icon name="aim" size="50rpx" />
+</view>

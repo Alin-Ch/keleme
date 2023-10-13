@@ -1,0 +1,76 @@
+
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+}
+
+.content{
+  padding-bottom: 100rpx;
+}
+
+
+
+
+/* pop弹出层的规格选择 */
+.sizetop{
+  width: 100%;
+  height: 260rpx;
+  padding: 10rpx;
+  margin-top: 80rpx;
+  display: flex;
+}
+.sizetop .cover{
+  width: 255rpx;
+  height: 260rpx;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+}
+.sizetop .name{
+  margin-left: 30rpx;
+}
+.sizetop .name .name1{
+  font-size: 35rpx;
+  color: #333;
+}
+.sizetop .name .price{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: red;
+}
+
+.midddle .size{
+  align-items: center;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+}
+.midddle .number{
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.sizebottom{
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.btn1{
+  border-radius: 40rpx 0 0 40rpx;
+  background-color: #ffa938;
+  color: #fff;
+  flex: 1;
+}
+.btn2{
+  border-radius: 0 40rpx 40rpx 0;
+  background-color: #ff0505;
+  color: #fff;
+  flex: 1;
+}

@@ -1,0 +1,156 @@
+<view wx:if="{{orderList.length>0}}">
+  <van-tabs active="{{ active }}" sticky swipeable color="#29a0de" border>
+    <van-tab title="全部">
+      <!-- <OrderItem wx:for="{{orderList}}" wx:key="index" order="{{item}}" /> -->
+      <view class="box" wx:for="{{orderList}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">{{order.statu === 1 ? '待付款' :
+            order.statu === 2 ? '待发货' :
+            order.statu === 3 ? '配送中' :
+            order.statu === 4 ? '已完成' :
+            order.statu === 0 ? '已取消' :
+            ''}}
+          </text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="btn" wx:if="{{order.statu==1}}">
+            <van-button round bind:click="cancel" data-order="{{order}}">取消</van-button>
+            <van-button round type="danger" bind:click="pay" data-order="{{order}}">付款</van-button>
+          </view>
+          <view class="oneBtn" wx:if="{{order.statu==2}}">
+            <van-button round type="danger" bind:click="refund" data-order="{{order}}">退款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="待付款">
+      <view class="box" wx:for="{{noPayOrders}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="btn" wx:if="{{order.statu==1}}">
+            <van-button round bind:click="cancel" data-order="{{order}}">取消</van-button>
+            <van-button round type="danger" bind:click="pay" data-order="{{order}}">付款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="待发货">
+      <view class="box" wx:for="{{watingOrders}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="oneBtn">
+            <van-button round type="danger" bind:click="refund" data-order="{{order}}">退款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="配送中">
+      <view class="box" wx:for="{{sendingOrders}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="btn" wx:if="{{order.statu==1}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">付款</van-button>
+          </view>
+          <view class="btn" wx:if="{{order.statu==2}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">退款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已完成">
+      <view class="box" wx:for="{{completedOrders}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="btn" wx:if="{{order.statu==1}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">付款</van-button>
+          </view>
+          <view class="btn" wx:if="{{order.statu==2}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">退款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已取消">
+      <view class="box" wx:for="{{cancelOrders}}" wx:key="index" wx:for-item="order">
+        <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <view>
+            <van-icon name="orders-o" />下单时间：{{order.createtime}}
+          </view>
+          <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+        </view>
+        <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.orderid}}">
+          <van-icon name="logistics" /> 订单号：{{order.orderid}}
+        </view>
+        <view class="money">
+          ￥ {{order.money}}
+          <view class="btn" wx:if="{{order.statu==1}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">付款</van-button>
+          </view>
+          <view class="btn" wx:if="{{order.statu==2}}">
+            <van-button round>取消</van-button>
+            <van-button round type="danger">退款</van-button>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+<view wx:else>
+  <van-empty image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="您还没有下单任何一件宝贝噢~" />
+</view>
+
+
+<!-- dialog 弹出框 -->
+<van-dialog id="van-dialog" use-slot show="{{ dialogshow }}" show-cancel-button>
+  <image src="/images/qrcode.jpg" mode="aspectFit" />
+</van-dialog>
+
+<!-- <van-dialog  show="{{show2}}" /> -->

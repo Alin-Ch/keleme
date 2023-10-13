@@ -1,0 +1,23 @@
+<view class="box">
+  <view class="topNav">
+    <view>
+      <van-icon name="orders-o" />下单时间：{{order.createtime}}
+    </view>
+    <text style="font-weight: bold;color: rgb(255, 81, 0);">未发货</text>
+  </view>
+  <view class="orderno">
+    <van-icon name="logistics" /> 订单号：{{order.orderid}}
+  </view>
+  <view class="money">
+    ￥ {{order.money}}
+    <view class="btn" wx:if="{{order.statu==1}}">
+      <van-button round>取消</van-button>
+      <van-button round type="danger">付款</van-button>
+    </view>
+    <view class="btn" wx:if="{{order.statu==2}}">
+      <van-button round>取消</van-button>
+      <van-button round type="danger">退款</van-button>
+    </view>
+  </view>
+
+</view>

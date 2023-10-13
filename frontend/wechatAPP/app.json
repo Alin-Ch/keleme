@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ticket/ticket",
+    "pages/order/order",
+    "pages/ordermy/ordermy",
+    "pages/orderdetail/orderdetail",
+    "pages/my/my",
+    "pages/notice/notice",
+    "pages/pay/pay",
+    "pages/myticket/myticket",
+    "pages/shopmall/shopmall",
+    "pages/deposit/deposit",
+    "pages/addaddress/addaddress",
+    "pages/address/address",
+    "pages/addrsetting/addrsetting",
+    "pages/cart/cart",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/setting/setting",
+    "pages/gooddetail/gooddetail",
+    "pages/lottery/lottery",
+    "pages/public/public"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#29a0de",
+    "navigationBarTitleText": "渴了么",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index-sel.png"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "text": "水票",
+        "iconPath": "/images/ticket.png",
+        "selectedIconPath": "/images/ticket-sel.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "订单",
+        "iconPath": "/images/order.png",
+        "selectedIconPath": "/images/order-sel.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-sel.png"
+      }
+    ],
+    "selectedColor": "#1296db"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "requiredBackgroundModes": [
+    "privateChat"
+  ],
+  "requiredPrivateInfos": [
+    "choosePoi",
+    "chooseAddress",
+    "chooseLocation",
+    "getLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

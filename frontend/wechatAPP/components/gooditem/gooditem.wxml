@@ -1,0 +1,8 @@
+<view class="goodItem">
+  <image class="pic" src="http://localhost:8080/api/files/{{good.cover}}" mode="aspectFit" bind:tap="previewImage" data-src="{{good.cover}}" />
+  <view class="goodinfo">
+    <text class="name">{{good.goodname}}</text>
+    <text class="desc">{{good.description}}</text>
+    <text class="price">￥{{good.newprice}} <text class="sold"> {{good.sold}}+人已买</text></text>
+  </view>
+</view>

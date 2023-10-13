@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "支付页面",
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}

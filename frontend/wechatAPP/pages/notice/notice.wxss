@@ -1,0 +1,42 @@
+page{
+  /* background-color: rgb(245, 245, 245); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.usehelp{
+  width: 95%;
+  padding: 0 30rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+.usehelp .title{
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  color: #555;
+}
+.usehelp .suehelpbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #7f7f7f;
+}
+.usehelp .suehelpbox text{
+  margin: 20rpx 0;
+}
+ /* 版权所有 */
+.usehelp .copyright {
+  width: 100%;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 100rpx;
+  margin-top: 20rpx;
+}
+
+

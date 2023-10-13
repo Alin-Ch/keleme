@@ -1,0 +1,25 @@
+<scroll-view class="scrollview" scroll-y style="height:calc(100vh - 100rpx)">
+  <view class="item" wx:for="{{addressList}}" wx:key="index">
+    <view class="left" bindtap="clickItem" data-address="{{item}}">
+      <view class="name">{{item.username}} <text> {{item.phone}}</text></view>
+      <view class="address">
+        <van-tag type="primary" size="medium" wx:if="{{item.isdefault=='1'}}">默认</van-tag>
+        <text> 收货地址: {{item.detailaddress}}</text>
+      </view>
+    </view>
+    <view class="right">
+      <van-icon name="delete-o" size="25px" color="#7f7f7f" bind:click="delete" data-item="{{item}}" />
+      <van-icon name="setting-o" size="25px" color="#7f7f7f" bind:click="edit" data-item="{{item}}" />
+    </view>
+  </view>
+</scroll-view>
+<!-- 提示用户确认删除的弹窗 -->
+<van-dialog id="van-dialog" />
+<!-- Toast提示 -->
+<van-toast id="van-toast" />
+
+
+<!-- 增加地址 -->
+<view class="button-wrapper" bindtap="addAddress">
+  <van-button icon="plus" color="#ee0b24" type="primary" size="large">添加地址</van-button>
+</view>

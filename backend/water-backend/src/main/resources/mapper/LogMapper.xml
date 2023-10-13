@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.water.mapper.LogMapper">
+
+    <select id="findBySearch" resultType="com.water.pojo.Log">
+        select * from log
+            <where>
+                <if test="params != null and params.name != null and params.name != ''">
+                    and name like concat('%',#{params.name},'%')
+                </if>
+                <if test="params != null and params.someoneName != null and params.someoneName != ''">
+                    and someoneName like concat('%',#{params.someoneName},'%')
+                </if>
+            </where>
+    </select>
+</mapper>

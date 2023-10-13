@@ -1,0 +1,29 @@
+.top{
+  width: 100%;
+  height: 80rpx;
+  background-color: #29a0de;
+  color: #fff;
+  font-size: 35rpx;
+  font-weight: bold;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+.map{
+  width: 100%;
+  height: 700rpx;
+}
+.map map{
+  width: 100%;
+  height: 100%;
+}
+
+.address{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: absolute;
+  right: 20rpx;
+  top: 600rpx;
+}

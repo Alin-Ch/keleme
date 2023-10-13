@@ -1,0 +1,63 @@
+<van-tabs active="{{ active }}" sticky swipeable bind:change="tagChange" color="#fff" title-active-color="#fff" title-inactive-color="#d7f4fd" nav-class="nav-class" custom-class="custom-tab" z-index="9">
+  <van-tab title="商品">
+    <!-- 搜索框 -->
+    <view class="search">
+      <van-search value="{{ inputValue }}" label="搜索" placeholder="请输入商品名称" use-action-slot bind:change="inputChange" bind:search="onSearch" shape="round" background="#29a0de">
+        <view slot="action" bind:tap="search" style="padding: 0 20rpx 0 20rpx;color: #fff;">搜索</view>
+      </van-search>
+    </view>
+    <!-- 页面主要内容 -->
+    <view class="content">
+      <GoodItem wx:for="{{goodList}}" good="{{item}}" wx:key="index" bindtap="clickGood" data-id="{{item.goodid}}" data-good="{{item}}" />
+    </view>
+  </van-tab>
+
+  <van-tab title="一键订水">
+    <view>
+      <view class="text">
+        <van-notice-bar scrollable left-icon="volume-o" text="未登录只能看看点着玩，不能购买噢~" color="#fff" background="#29a0de" />
+      </view>
+
+
+      <!-- 中间部分表单 -->
+      <view class="info">
+        <view class="title" wx:if="{{!date}}">
+          <van-icon name="clock-o" /> <text bindtap="showCalendar">请选择配送时间</text>
+        </view>
+        <view class="title" wx:if="{{date}}" bindtap="showCalendar">
+          配送日期 {{ date }}
+        </view>
+        <van-cell-group class="infobody">
+          <van-field value="{{ address }}" required readonly label="收货地址" icon="arrow" placeholder="请选择地址" bindtap="clickAddress" />
+
+          <van-field value="{{ selGood.name }} {{ selGood.size }}" type="text" label="商品" placeholder="请选择商品" required readonly icon="arrow" bind:click-icon="clickGoods" use-button-slot>
+            <van-button slot="button" size="small" type="default" disabled style="border: none;">
+              ￥ {{count}}
+            </van-button>
+          </van-field>
+          <view class="stepper">
+            <text>数量</text>
+            <van-stepper value="{{ number }}" bind:change="countChange" />
+          </view>
+
+          <van-field value="{{ remark }}" type="text" clearable label="备注" placeholder="可在此填写备注" bind:input="remarkInput" />
+        </van-cell-group>
+
+        <view class="btn">
+          <van-button round type="primary" bindtap="pay">立即支付￥{{count}}元</van-button>
+          <van-button round type="info" size="mini" color="red" class="red" bindtap="useRedpacket">使用红包</van-button>
+        </view>
+      </view>
+      <!-- 弹出层 -->
+      <van-action-sheet show="{{ showAddress }}" actions="{{ addressList }}" description="请选择收货地址" bind:close="addressClose" bind:select="addressSelect" cancel-text="新增地址" bind:cancel="addAddress" />
+      <van-action-sheet show="{{ showGoods }}" actions="{{ goodsList }}" description="请选择商品" bind:close="goodsClose" bind:select="goodsSelect" />
+      <!-- 日历 -->
+      <van-calendar show="{{ showCalendar }}" show-confirm="{{ false }}" bind:close="closeCalendar" bind:confirm="onConfirm" />
+
+      <view class="tip">
+        <view class="known">点击查看：<text bindtap="clickKnown" style="border-bottom: 1rpx solid #fff;">购买须知</text></view>
+        <view>政企订水电话：0771-88888888</view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

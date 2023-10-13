@@ -1,0 +1,14 @@
+<view class="top">
+  <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="bullhorn-o" text="在渴了么平台上交押金有保障~" />
+</view>
+
+<view class="yajin" wx:if="{{isPromise}}">
+  <van-card tag="桶子" price="{{2.00}}" desc="哪个商家的桶" title="什么时候订的" thumb="/images/huge.jpg">
+    <view slot="footer">
+      <van-button round type="info" size="small">退押金</van-button>
+    </view>
+  </van-card>
+</view>
+<view wx:if="{{!isPromise}}">
+  <van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="您还未交押金噢~" />
+</view>

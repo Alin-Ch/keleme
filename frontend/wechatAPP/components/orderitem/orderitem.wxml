@@ -1,0 +1,30 @@
+<view class="item">
+  <view class="title">
+    <view>
+      <van-icon name="shop-o" /> 商家名称
+    </view>
+    <text class="topright">已发货</text>
+  </view>
+  <view class="middle">
+    <!-- <image class="cover" src="/images/huge.jpg" mode="aspectFill" /> -->
+    <view class="info">
+      <view class="name">商品名称</view>
+      <view class="desc">商品描述</view>
+    </view>
+    <view class="money">
+      <text style="font-weight: bold;">￥{{45}}</text>
+      <text style="font-size: 28rpx;color: #7f7f7f;">× {{5}}</text>
+    </view>
+  </view>
+  <view class="footer">
+    <van-steps steps="{{ steps }}" active="{{ active }}" />
+    <view style="float: right;margin-right: 20rpx;">实付款￥{{45.06}}</view>
+    <view class="btn">
+      <van-button round type="default">取消订单</van-button>
+      <van-button round type="info">去付款</van-button>
+      <van-button round type="primary">退款</van-button>
+      <van-button round type="primary">去评价</van-button>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "usingComponents": {
+    "van-tag": "@vant/weapp/tag/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

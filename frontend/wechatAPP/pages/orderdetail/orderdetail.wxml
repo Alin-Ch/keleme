@@ -1,0 +1,48 @@
+<!-- 顶部 -->
+<view class="topNav">
+  <view class="addressInfo">
+    <view class="title">
+      <van-icon name="location-o" />
+      <view>{{address.detailaddress}}</view>
+    </view>
+    <view class="userinfo">
+      <view>收货人：{{address.username}}</view>
+      <view>手机号：{{address.phone}}</view>
+    </view>
+  </view>
+</view>
+<van-divider customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;margin-top:0rpx" />
+<!-- 中间商品内容 -->
+<view class="content">
+  <view class="gooditem" wx:for="{{goodList}}" wx:key="index">
+    <view class="left">
+      <image class="cover" src="http://localhost:8080/api/files/{{item.cover}}" mode="aspectFit" />
+    </view>
+    <view class="right">
+      <view class="goodname">{{item.goodname}}</view>
+      <view class="gooddesc">{{item.description}}</view>
+      <view class="price">
+        <text style="font-size:35rpx;font-weight:bold;color:red;">￥ {{item.newprice}}</text>
+        <text style="color: #7f7f7f;font-weight: bold;">X {{item.count}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 用户的订单备注 -->
+  <van-cell-group>
+    <van-field value="{{ orders.remark }}" label="订单备注" type="textarea" autosize border readonly title-width="4em" bind:change="remarkChange" />
+  </van-cell-group>
+
+  <view class="tips">
+    <text style="font-size: 28rpx;color: #7f7f7f;margin-right: 20rpx;">共{{goodList.length}}件</text>
+    <text>小计<text style="font-size: 38rpx;font-weight: bold;color: red;">￥{{money}}</text></text>
+  </view>
+</view>
+<!-- 底部付款按钮 -->
+<view>
+  <button style="width:300rpx;position: absolute;right: 350rpx;" bindtap="cancel">取消</button>
+  <button class="pay" type="warn" bindtap="pay">付款</button>
+</view>
+
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />

@@ -1,0 +1,45 @@
+/* 顶部 */
+.top{
+  width: 100%;
+  height: 130rpx;
+  line-height: 130rpx;
+  border-bottom: 1rpx solid rgb(204, 203, 203);
+  color: #666;
+}
+.top .left{
+  margin-left: 30rpx;
+  font-size: 35rpx;
+}
+.top .left::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #29a0de;
+  margin-right: 10px;
+}
+.top .gift{
+  margin-right: 30rpx;
+  color: red;
+  float: right;
+}
+/* 商品卡片 */
+.item{
+  color: #7f7f7f;
+}
+.item image{
+  width: 100%;
+  height: 100%;
+}
+.item .change{
+  width: 100%;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 35rpx;
+  background-color: #29a0de;
+  color: #fff;
+  font-size: 35rpx;
+  font-weight: bold;
+}

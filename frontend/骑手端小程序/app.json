@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/send/send",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/orderdetail/orderdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "渴了么骑手端",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/images/index.png",
+      "selectedIconPath": "/images/index-sel.png"
+    }, {
+      "pagePath": "pages/send/send",
+      "text": "配送",
+      "iconPath": "/images/song.png",
+      "selectedIconPath": "/images/song-sel.png"
+    }, {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "/images/my.png",
+      "selectedIconPath": "/images/my-sel.png"
+    }],
+    "selectedColor": "#1296db"
+  },
+  "requiredPrivateInfos": [
+    "choosePoi",
+    "chooseAddress",
+    "chooseLocation",
+    "getLocation"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+
+}

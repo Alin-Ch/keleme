@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.water.mapper.OrderDetailMapper">
+    <select id="selectById" resultType="com.water.pojo.OrderDetails">
+        SELECT DISTINCT orders.*,
+                        order_detail.*,
+                        `user`.username,
+                        address.username as orderUserName,
+                        `user`.phone as phone,
+                        address.detailaddress as addressName,
+                        good.*
+        from order_detail,`user`,address,orders,good
+        <where>
+            `user`.userid = orders.order_userid
+            and orders.address_id = address.addressid
+            and orders.orderid = #{id}
+            and order_detail.order_id = orders.orderid
+            and order_detail.good_id = good.goodid
+        </where>
+    </select>
+
+</mapper>

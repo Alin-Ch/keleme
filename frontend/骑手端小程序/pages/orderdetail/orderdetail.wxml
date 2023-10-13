@@ -1,0 +1,40 @@
+<view class="topNav">
+  订单详情
+</view>
+<view class="address">
+  <view class="name">收货人名称：{{address.username}}</view>
+  <view class="phone">收货人手机号：{{address.phone}}</view>
+  <view class="addr">收货地址：{{address.detailaddress}}</view>
+</view>
+<view class="title">
+  <view class="date">下单时间：{{orderInfo.createtime}}</view>
+  <view class="statu">{{ orderInfo.statu === 2 ? '待配送' :
+    orderInfo.statu === 3 ? '配送中' :
+    orderInfo.statu === 4 ? '已完成' :
+    ''}}</view>
+</view>
+<view class="content" wx:for="{{goodList}}" wx:key="index">
+  <van-card num="{{2}}" price="{{item.newprice}}" desc="{{item.description}}" title="{{item.goodname}}" thumb="http://localhost:8080/api/files/{{item.cover}}" />
+</view>
+
+<view class="btn" wx:if="{{orderInfo.statu==2}}" >
+  <van-button round type="info" bind:click="beginSend">开始配送</van-button>
+</view>
+<view class="btn" wx:if="{{orderInfo.statu==3}}" >
+  <van-button round type="info" bind:click="complete">我已送达</van-button>
+</view>
+
+
+<!-- <view class="content">
+  <view class="item">
+    <view class="left">
+      <image src="/images/girl.jpg" mode="aspectFill" />
+    </view>
+    <view class="middel">
+      <view class="name">商品名称</view>
+      <view class="name">描述</view>
+    </view>
+    <view class="right">
+    </view>
+  </view>
+</view> -->

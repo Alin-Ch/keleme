@@ -1,0 +1,10 @@
+<view class="q3-wom-float">
+  <image 
+    src="{{gifUrl}}"
+    class="image-gif"
+    mode="widthFix" 
+    bind:tap="click"
+    style="{{imgStyle}}"
+    catchtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd"
+  />
+</view>

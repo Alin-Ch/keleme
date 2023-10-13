@@ -1,0 +1,7 @@
+.image-gif {
+  z-index: var(--prompt-header);
+  width: 300rpx;
+  position: fixed;
+  top: calc(50vh + 330rpx);
+  left: 350rpx;
+}

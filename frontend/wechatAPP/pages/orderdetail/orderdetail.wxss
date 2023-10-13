@@ -1,0 +1,89 @@
+page{
+  background-color: rgb(251, 251, 251);
+}
+/* 顶部的样式 */
+.topNav{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.topNav .addressInfo{
+  width: 100%;
+  padding: 10rpx;
+}
+.topNav .addressInfo .title{
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  font-size: 30rpx;
+  color: #7f7f7f;
+}
+.topNav .addressInfo .userinfo{
+  margin-left: 35rpx;
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+
+/* 中间内容部分 */
+.content{
+  width: 100%;
+  border: rgb(240, 240, 240);
+  background-color: rgb(253, 253, 253);
+}
+.content .gooditem{
+  width: 100%;
+  padding: 10rpx 20rpx;
+  display: flex;
+  border-bottom: 1rpx solid rgb(238, 238, 238);
+  background-color: #fff;
+  margin: 10rpx 0;
+}
+.content .gooditem .left {
+  width: 200rpx;
+  height: 250rpx;
+}
+.content .gooditem .left .cover{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.content .gooditem .right{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content .gooditem .right .goodname{
+  font-size: 35rpx;
+  color: #7f7f7f;
+  font-weight: bold;
+}
+.content .gooditem .right .gooddesc{
+  font-size: 30rpx;
+  color: #7f7f7f;
+}
+.content .gooditem .right .price{
+  width: 500rpx;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.content .tips{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+/* 付款按钮 */
+.pay{
+  width: 300rpx;
+  position: absolute;
+  right: 20rpx;
+}

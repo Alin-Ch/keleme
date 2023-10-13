@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.water.mapper.OrdersMapper">
+<!--    根据订单id查询订单详情，并显示用户名和其地址-->
+    <select id="findBySearch" resultType="com.water.pojo.Orders">
+        SELECT orders.*,
+               user.username as userName,
+               address.detailaddress as addressName,
+                address.username as orderUName,
+               `user`.phone as Phone
+        from orders,user,address
+        <where>
+            orders.order_userid = user.userid
+            and orders.address_id = address.addressid
+            <if test="params != null and params.name != null and params.name != ''">
+                and user.username like concat('%',#{params.name},'%')
+            </if>
+        </where>
+    </select>
+<!-- 根据当前的登陆用户id查询他自己的订单-->
+    <select id="findById" resultType="com.water.pojo.Orders">
+        SELECT DISTINCT orders.* from orders,`user`,order_detail
+        <where>
+            orders.order_userid = #{id}
+        </where>
+        ORDER BY orders.createtime ASC
+    </select>
+<!-- 更新订单的状态-->
+    <update id="updateForStatus">
+        update orders
+        <set>
+            <if test="statu != null">statu = #{statu},</if>
+        </set>
+        WHERE orderid = #{orderid}
+    </update>
+
+</mapper>

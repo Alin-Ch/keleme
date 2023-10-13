@@ -1,0 +1,96 @@
+<van-tabs active="{{ active }}" bind:change="tagChange" animated swipeable sticky title-active-color="blue" color="blue">
+  <van-tab title="全部订单">
+    <view class="box" wx:for="{{orderList}}" wx:key="index" wx:for-item="order">
+      <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <view>
+          <van-icon name="orders-o" />下单时间：{{order.createtime}}
+        </view>
+        <text style="font-weight: bold;color: rgb(255, 81, 0);">{{ order.statu === 2 ? '待配送' :
+          order.statu === 3 ? '配送中' :
+          order.statu === 4 ? '已完成' :
+          ''}}
+        </text>
+      </view>
+      <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <van-icon name="logistics" /> 订单号：{{order.orderid}}
+      </view>
+      <view class="money">
+        <view class="btn" wx:if="{{order.statu==2}}">
+          <!-- <van-button round>取消</van-button> -->
+          <van-button round type="info" bind:click="beginSend" data-order="{{order}}">开始配送</van-button>
+        </view>
+        <view class="btn" wx:if="{{order.statu==3}}">
+          <van-button round type="danger" bind:click="isSend" data-order="{{order}}">我已送达</van-button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待派送">
+    <view class="box" wx:for="{{waiting}}" wx:key="index" wx:for-item="order">
+      <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <view>
+          <van-icon name="orders-o" />下单时间：{{order.createtime}}
+        </view>
+        <text style="font-weight: bold;color: rgb(255, 81, 0);">{{ order.statu === 2 ? '待配送' :
+          order.statu === 3 ? '配送中' :
+          order.statu === 4 ? '已完成' :
+          ''}}
+        </text>
+      </view>
+      <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <van-icon name="logistics" /> 订单号：{{order.orderid}}
+      </view>
+      <view class="money">
+        <view class="btn" wx:if="{{order.statu==2}}">
+          <!-- <van-button round>取消</van-button> -->
+          <van-button round type="info" bind:click="beginSend" data-order="{{order}}">开始配送</van-button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="配送中">
+    <view class="box" wx:for="{{delivering}}" wx:key="index" wx:for-item="order">
+      <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <view>
+          <van-icon name="orders-o" />下单时间：{{order.createtime}}
+        </view>
+        <text style="font-weight: bold;color: rgb(255, 81, 0);">{{ order.statu === 2 ? '待配送' :
+          order.statu === 3 ? '配送中' :
+          order.statu === 4 ? '已完成' :
+          ''}}
+        </text>
+      </view>
+      <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <van-icon name="logistics" /> 订单号：{{order.orderid}}
+      </view>
+      <view class="money">
+        <view class="btn" wx:if="{{order.statu==3}}">
+          <van-button round type="danger" bind:click="isSend" data-order="{{order}}">我已送达</van-button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="已完成">
+    <view class="box" wx:for="{{completed}}" wx:key="index" wx:for-item="order">
+      <view class="topNav" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <view>
+          <van-icon name="orders-o" />下单时间：{{order.createtime}}
+        </view>
+        <text style="font-weight: bold;color: rgb(255, 81, 0);">{{ order.statu === 2 ? '待配送' :
+          order.statu === 3 ? '配送中' :
+          order.statu === 4 ? '已完成' :
+          ''}}
+        </text>
+      </view>
+      <view class="orderno" bindtap="clickOrder" data-orderNo="{{order.ordernum}}">
+        <van-icon name="logistics" /> 订单号：{{order.orderid}}
+      </view>
+      <view class="money">
+        <view class="btn" wx:if="{{order.statu==2}}">
+          <!-- <van-button round>取消</van-button> -->
+          <van-button round type="danger">开始配送</van-button>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

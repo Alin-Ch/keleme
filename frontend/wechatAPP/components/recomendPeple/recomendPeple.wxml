@@ -1,0 +1,8 @@
+<view class="people">
+  <image src="/images/huge.jpg" mode="aspectFill" class="img" />
+  <view class="info">
+    <view class="name">用户名称：<text class="txt">{{user.username}}</text></view>
+    <view class="phone">手机号码：{{user.phone}}</view>
+    <view class="date">注册时间：{{user.date}}</view>
+  </view>
+</view>

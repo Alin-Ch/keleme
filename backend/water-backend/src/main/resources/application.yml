@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+#连接数据库的配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/water
+    username: root
+    password: 123456
+#加入redis
+#  redis:
+#    host: 192.168.216.140
+#    port: 6379
+#    connect-timeout: 5000
+  #  解决循环依赖问题
+  main:
+    allow-circular-references: true
+
+#将日志输出到控制台
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  配置mybatis实体类和xml映射
+#  标识mapper的位置
+  mapper-locations: classpath:mapper/*.xml
+#  实体类包
+  type-aliases-package: com.water.pojo
+
+#分页
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

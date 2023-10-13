@@ -1,0 +1,30 @@
+page{
+  background-color: rgb(241, 240, 240);
+}
+.box{
+  box-shadow: rgba(222, 229, 236, 0.2) 0px 8px 24px;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+  background-color: #fff;
+  width: 95%;
+  border-radius: 20rpx;
+  margin: 10rpx auto;
+}
+.topNav{
+  padding: 10rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.orderno{
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.money{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30rpx;
+  font-size: 35rpx;
+}

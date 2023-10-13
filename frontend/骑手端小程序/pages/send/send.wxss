@@ -1,0 +1,18 @@
+.map{
+  width: 100%;
+  /* height: 700rpx; */
+  height: 100vh;
+}
+.map map{
+  width: 100%;
+  height: 100%;
+}
+.address{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+}

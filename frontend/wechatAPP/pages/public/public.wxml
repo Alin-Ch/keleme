@@ -1,0 +1,43 @@
+<!-- 两条通知 -->
+<van-notice-bar scrollable color="#1989fa" background="#ecf9ff" left-icon="bullhorn-o" text="推广可得佣金，欢迎大家踊跃推荐" />
+<view style="height: 80rpx;">
+  <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="share-o" mode="closeable" text="点击右上角  分享给好友或者群组吧~" />
+</view>
+<!-- 展示会员 -->
+<view class="vip">
+  <view>
+    <van-icon name="manager-o" color="blue" />
+    <text>邀请人数: <text style="font-weight: bold;">{{people}}</text></text>
+  </view>
+  <view>
+    <van-button icon="share-o" type="info" size="small" round open-type="share">
+      分享
+    </van-button>
+  </view>
+  <view style="border-bottom: 1rpx solid rgb(202, 201, 201);" bindtap="payback">
+    <van-icon name="balance-o" color="blue" />
+    <text>邀新奖励: <text style="font-weight: bold;">￥{{money}}</text></text>
+  </view>
+</view>
+<van-dialog id="van-dialog" confirm-button-color="#29a0de" />
+<!-- 已邀请的人 -->
+<Recomend user="{{user}}" wx:for="{{people}}" wx:key="index" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 分享 -->
+<!-- <button bindtap="share">分享给好友</button> -->
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect" bind:close="onClose" />

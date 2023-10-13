@@ -1,0 +1,25 @@
+<view class="box">
+  <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" class="cover">
+    <image src="{{avatar}}" class="pic" mode="aspectFill" bindtap="getUserProfile" />
+  </button>
+
+  <view class="info">
+    <van-cell-group>
+      <van-field value="{{ username }}" type="nickname" clearable maxlength="15" left-icon="user-o" label="用户名" placeholder="请输入用户名" bind:change="nameChange" />
+      <van-field value="{{ gender }}" readonly left-icon="flower-o" label="性别" bindtap="showGender" is-link />
+      <van-field value="{{ phone }}" clearable maxlength="11" left-icon="phone-o" label="手机号" placeholder="请输入手机号" bind:change="phoneChange" />
+      <!-- <van-cell-group>
+        <van-field value="{{ sms }}" center clearable left-icon="font-o"  label="验证码" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+          <van-button slot="button" round size="small" type="primary">
+            发送验证码
+          </van-button>
+        </van-field>
+      </van-cell-group> -->
+
+    </van-cell-group>
+  </view>
+  <button class="btn" bindtap="submit">保 存</button>
+</view>
+
+<!-- 弹出层 -->
+<van-action-sheet show="{{ showGender }}" actions="{{ genderList }}" bind:close="genderClose" bind:select="genderSelect" />

@@ -1,0 +1,21 @@
+<!-- 顶部 -->
+<view class="top">
+  <text class="left">可用积分<text style="font-weight: bold;">{{score}}</text></text>
+  <view class="gift">
+    <van-icon name="point-gift-o" color="red" /><text style="border-bottom: 1rpx solid red;" bindtap="gift">我的礼品</text>
+  </view>
+</view>
+<!-- dialog -->
+<van-dialog id="van-dialog" />
+
+<!-- 中间商品 -->
+<van-grid column-num="2" border="{{ true }}" gutter="10">
+  <view class="item" wx:for="{{ 3 }}" wx:key="index">
+    <van-grid-item use-slot>
+      <image src="/images/huge.jpg" mode="widthFix" />
+      <text>哇哈哈纯净水1.5L</text>
+      <text>所需积分: {{1}}</text>
+      <text class="change" data-id="{{index}}" bindtap="change">兑换</text>
+    </van-grid-item>
+  </view>
+</van-grid>

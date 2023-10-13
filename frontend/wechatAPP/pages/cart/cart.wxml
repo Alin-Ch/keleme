@@ -1,0 +1,39 @@
+<block wx:if="{{carts.length > 0}}">
+  <view class="top">
+    <view class="delete" bindtap="deleteSel"><text style="border-bottom: 1rpx solid #999;">删除</text></view>
+    <view class="gg"><text style="border-bottom: 1rpx solid #999;" bindtap="goIndex">再去逛逛 ></text>
+    </view>
+  </view>
+  <!-- 购物车列表 -->
+  <view class="list" wx:for="{{carts}}" wx:key="index">
+    <view class="choose">
+      <view class="option {{item.selected == true?'selected':'selected1'}}" data-num="{{index}}" bindtap="selected"></view>
+    </view>
+    <view class="imgages">
+      <image class="navimg" src="http://localhost:8080/api/files/{{item.cover}}" mode="aspectFit"></image>
+    </view>
+    <view class="info">
+      <text class="title">{{item.goodname}}</text>
+      <text class="specify">{{item.description}}</text>
+      <view></view>
+      <text class="charge">￥<text>{{item.newprice}}</text></text>
+      <view class="buy-num">
+        <text class="sub" bindtap="subNum" data-index="{{index}}">-</text>
+        <text class="goodsNum">{{item.count}}</text>
+        <text class="add" bindtap="addNum" data-index="{{index}}">+</text>
+      </view>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bind:submit="onClickButton" tip="{{ true }}">
+    <van-checkbox value="{{ selectAll }}" checked-color="red" bind:change="selectedAll">全选</van-checkbox>
+  </van-submit-bar>
+</block>
+<!-- 如果没有内容 -->
+<view wx:else>
+  <van-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="空空如也~">
+    <van-button round type="danger" class="bottom-button" bindtap="goOut">去逛逛吧~</van-button>
+  </van-empty>
+</view>
+
+<van-dialog id="van-dialog" />

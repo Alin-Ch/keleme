@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "推广中心",
+  "usingComponents": {
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "Recomend": "/components/recomendPeple/recomendPeple"
+  }
+}

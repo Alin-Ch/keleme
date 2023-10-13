@@ -1,0 +1,146 @@
+.container {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  z-index: 10001;
+
+  width: 600rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin-right: 30px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.body {
+  min-height: 40px;
+}
+
+.bar {
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.bar .text {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 10rpx 20rpx -10rpx #fff;
+  border-radius: 16px;
+  min-width: 200rpx;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card .step {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: flex-start;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.card .label {
+  background: rgb(241, 130, 130);
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+.card .step-1__desc {
+  display: flex;
+}
+
+.card .image {
+  margin-top: 4px;
+  border-radius: 8px;
+}
+
+.quick-entry {
+  margin-top: 4px;
+  position: relative;
+  height: 70px;
+  background: rgb(68, 65, 88);
+  border-radius: 8px;
+  color: white;
+  padding: 8px 16px;
+}
+
+.quick-entry .quick-entry-title {
+  color: gray;
+  font-size: 10px;
+}
+
+.quick-entry .mini-app {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quick-entry .mini-app .logo {
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  border-radius: 100%;
+}
+
+.quick-entry .mini-app .name {
+  margin-top: 4px;
+  text-align: center;
+  color: white;
+  font-size: 8px;
+}
+
+.tail {
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.got-it {
+  width: 80px;
+  background: transparent;
+  border-radius: 1000px;
+  border: 1px solid white;
+  color: white;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+}

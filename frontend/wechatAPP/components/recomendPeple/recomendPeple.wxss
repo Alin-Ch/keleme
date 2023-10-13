@@ -1,0 +1,26 @@
+.people{
+  padding: 10rpx;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  display: flex;
+  border: 1rpx solid rgb(240, 239, 239);
+}
+.people .img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+}
+.people .info{
+  width: 500rpx;
+  color: #5c5c5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 20rpx;
+}
+.people .info .name .txt{
+  font-size: 35rpx;
+  font-weight: bold;
+}

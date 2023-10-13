@@ -1,0 +1,20 @@
+<view class="topNav">
+  订单详情
+</view>
+<view class="address">
+  <view class="name">收货人名称：{{address.username}}</view>
+  <view class="phone">收货人手机号：{{address.phone}}</view>
+  <view class="addr">收货地址：{{address.detailaddress}}</view>
+</view>
+<view class="title">
+  <view class="date">下单时间：{{orderInfo.createtime}}</view>
+  <view class="statu">{{ orderInfo.statu === 0 ? '已取消' :
+    orderInfo.statu === 1 ? '待付款' :
+    orderInfo.statu === 2 ? '待配送' :
+    orderInfo.statu === 3 ? '配送中' :
+    orderInfo.statu === 4 ? '已完成' :
+    ''}}</view>
+</view>
+<view class="content" wx:for="{{goodArr}}" wx:key="index">
+  <van-card num="{{item.number}}" price="{{item.newPrice}}" desc="{{item.name}}" title="{{item.goodname}}" thumb="/images/qrcode.jpg" />
+</view>

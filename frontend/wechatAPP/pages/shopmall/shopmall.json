@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "积分商城",
+  "usingComponents": {
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-dialog": "@vant/weapp/dialog/index"
+  }
+}
