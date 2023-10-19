@@ -20,37 +20,37 @@
 
 ###### 后台管理端
 
-<img src="image\1.png"  />
+<img src="image/1.png"  />
 
-<img src="image\2.png"  />
+<img src="image/2.png"  />
 
-<img src="image\3.png"  />
+<img src="image/3.png"  />
 
 ###### 小程序客户端
 
-<img src="image\10.png"  />
+<img src="image/10.png"  />
 
-<img src="image\11.png"  />
+<img src="image/11.png"  />
 
-<img src="image\12.png"  />
+<img src="image/12.png"  />
 
-<img src="image\13.png"  />
+<img src="image/13.png"  />
 
-<img src="image\14.png"  />
+<img src="image/14.png"  />
 
-<img src="image\15.png"  />
+<img src="image/15.png"  />
 
-<img src="image\16.png"  />
+<img src="image/16.png"  />
 
 ###### 小程序水站端
 
-<img src="image\20.png"  />
+<img src="image/20.png"  />
 
-<img src="image\21.png"  />
+<img src="image/21.png"  />
 
-<img src="image\22.png"  />
+<img src="image/22.png"  />
 
-<img src="image\23.png"  />
+<img src="image/23.png"  />
 
 用户可根据自己的需要进行二次开发
 
